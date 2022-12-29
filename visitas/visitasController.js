@@ -12,15 +12,14 @@ module.exports = {
 			ExtraData
 		}
 		// No Cuenta Visita si es de Vercel
-		if (VisitaJson.ServerInfo["HTTP_USER_AGENT"].includes("Vercelbot")) {
+		if (VisitaJson?.ServerInfo["HTTP_USER_AGENT"].includes("Vercelbot")) {
 			res.status(200).send("0")
-		}else{
-			console.log("Cuenta Visita:",VisitaJson)
-			const visita = new Visita(VisitaJson);
-			visita.save()
-				.then(reply.code(200).send("1"))
-				.catch(error => reply.code(500).send({error}))
 		}
+
+		const visita = new Visita(VisitaJson);
+		visita.save()
+			.then(reply.code(200).send("1"))
+			.catch(error => reply.code(500).send({error}))
 	},
 	
 	GetAll: async (request, reply) => {
