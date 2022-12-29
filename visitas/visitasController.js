@@ -12,7 +12,9 @@ module.exports = {
 			ExtraData
 		}
 		// No Cuenta Visita si es de Vercel
-		try{if (VisitaJson.ServerInfo["HTTP_USER_AGENT"] === "Vercelbot/0.1 (+https://vercel.com)") {res.status(200).send("0")}} catch {}
+		if (VisitaJson.ServerInfo["HTTP_USER_AGENT"].includes("Vercelbot")) {
+			res.status(200).send("0")
+		}
 		let visita = new Visita(VisitaJson);
 		visita.save()
 			.then(reply.code(200).send("1"))
