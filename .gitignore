@@ -1,0 +1,6 @@
+# created by virtualenv automatically
+.git
+.vercel
+.env
+.INICIA.bat
+node_modules
