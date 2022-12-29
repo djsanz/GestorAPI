@@ -4,9 +4,9 @@ function GetInfoLog(req) {
         Salida  = {
             "HTTP_X_REAL_IP":'LocalHost',
             "HTTP_USER_AGENT":req.headers["user-agent"],
-            "HTTP_X_VERCEL_IP_COUNTRY":'DEV',
-            "HTTP_X_VERCEL_IP_CITY":'DEV',
-            "HTTP_X_FORWARDED_FOR":'DEV'
+            "HTTP_X_VERCEL_IP_COUNTRY":'',
+            "HTTP_X_VERCEL_IP_CITY":'',
+            "HTTP_X_FORWARDED_FOR":''
         }
     }else{
         Salida  = {

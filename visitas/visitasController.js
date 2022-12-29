@@ -17,7 +17,6 @@ module.exports = {
 		visita.save()
 			.then(reply.code(200).send("1"))
 			.catch(error => reply.code(500).send({error}))
-		reply.code(200).send(VisitaJson)
 	},
 	
 	GetAll: async (request, reply) => {

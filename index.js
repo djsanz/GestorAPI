@@ -1,8 +1,10 @@
 // https://www.sitepoint.com/create-rest-api-fastify/
 // https://medium.com/swlh/fullstack-crud-application-with-fastify-mongoose-and-react-admin-86d3e743dcdf
-const dotenv = require('dotenv');
+const dotenv = require('dotenv')
 const app = require('fastify')({logger: true})
 dotenv.config({ path: './.env' });
+
+app.register(require('@fastify/cors'),{origin: '*'});
 
 const Routes = require('./Routes');
 const visitasRoutes = require('./visitas/visitasRoutes');
